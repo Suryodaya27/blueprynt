@@ -63,10 +63,10 @@ const Home = () => {
   ];
 
   return (
-  <div className="min-h-screen bg-gradient-hero relative">
+   <div className="bg-background relative">
       <AnimatedBackground />
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden shadow-xl">
+      <section className="min-h-screen lg:pt-0 pt-24 relative  flex items-center justify-center overflow-hidden shadow-xl">
         <motion.div
           className="relative z-10 container mx-auto px-6 text-center"
           initial={{ opacity: 0, y: 40 }}
