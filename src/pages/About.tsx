@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Linkedin, Twitter, Award, Target, Lightbulb, Users } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { motion } from "framer-motion";
-import ayushImage from "@/assets/ayush-2.jpg";
+import ayushImage from "@/assets/ayush_img_2.jpg";
 import vruttiImage from "@/assets/vrutti-2.png";
 import suryodayaImage from "@/assets/pandery-2.jpg";
 
