@@ -63,7 +63,7 @@ const Home = () => {
   ];
 
   return (
-  <div className="min-h-screen bg-gradient-hero relative pt-5 md:pt-0">
+  <div className="min-h-screen bg-gradient-hero relative">
       <AnimatedBackground />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden shadow-xl">
@@ -75,7 +75,7 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground leading-tight bg-gradient-primary bg-clip-text text-transparent"
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 leading-tight bg-gradient-primary bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
