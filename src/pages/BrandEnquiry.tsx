@@ -7,9 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, ArrowLeft, CheckCircle, Upload, Building, Mail, Phone, Globe, Calendar, DollarSign, Target, FileText } from "lucide-react";
 import { z } from "zod";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { motion } from "framer-motion";
 import { brandEnquirySchema, type BrandEnquiryFormData } from "@/components/FormValidation";
 
-const BrandEnquiry = () => {
+function BrandEnquiry() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<BrandEnquiryFormData>>({});
@@ -61,7 +62,21 @@ const BrandEnquiry = () => {
     setIsSubmitted(true);
   };
 
+  // Validation for required fields on first step
+  const validateStep1 = () => {
+    const newErrors: Partial<BrandEnquiryFormData> = {};
+    if (!formData.companyName.trim()) newErrors.companyName = "Company name is required.";
+    if (!formData.industry.trim()) newErrors.industry = "Industry is required.";
+    if (!formData.fullName.trim()) newErrors.fullName = "Full name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const nextStep = () => {
+    if (currentStep === 1) {
+      if (!validateStep1()) return;
+    }
     if (currentStep < totalSteps) setCurrentStep(currentStep + 1);
   };
 
@@ -161,60 +176,101 @@ const BrandEnquiry = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24 bg-background relative">
+    <div className="min-h-screen pt-20 bg-background relative">
       <AnimatedBackground />
+
       {/* Header */}
-      <section className="py-8 bg-gradient-hero">
-        <div className="container mx-auto px-6">
+      <motion.section
+        className="py-6 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="container mx-auto px-3 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-poppins font-bold text-4xl md:text-5xl mb-4 text-foreground">
+            <motion.h1
+              className="font-poppins font-bold text-2xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-foreground"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               Start Your Blueprint
-            </h1>
-            <p className="font-inter text-lg text-muted-foreground mb-6">
+            </motion.h1>
+            <motion.p
+              className="font-inter text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               Tell us about your vision, and we'll craft a custom strategy to bring it to life.
-            </p>
-            
+            </motion.p>
             {/* Progress Bar */}
-            <div className="flex items-center justify-center mb-6">
-              <div className="flex items-center space-x-2">
+            <motion.div
+              className="w-full overflow-x-auto flex items-center justify-center mb-4 sm:mb-6 scrollbar-hide"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="flex items-center space-x-2 min-w-[320px] sm:min-w-0">
                 {Array.from({ length: totalSteps }, (_, i) => (
                   <div key={i} className="flex items-center">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                       i + 1 <= currentStep 
                         ? "bg-primary text-primary-foreground shadow-glow" 
                         : "bg-muted text-muted-foreground"
                     }`}>
                       {i + 1 <= currentStep ? (
-                        <CheckCircle className="w-4 h-4" />
+                        <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       ) : (
                         <span className="text-xs font-bold">{i + 1}</span>
                       )}
                     </div>
                     {i < totalSteps - 1 && (
-                      <div className={`w-12 h-0.5 mx-2 transition-all duration-300 ${
+                      <div className={`w-8 sm:w-12 h-0.5 mx-1 sm:mx-2 transition-all duration-300 ${
                         i + 1 < currentStep ? "bg-primary" : "bg-muted"
                       }`} />
                     )}
                   </div>
                 ))}
               </div>
-            </div>
-            
-            <p className="font-inter text-sm text-muted-foreground">
+            </motion.div>
+            <motion.p
+              className="font-inter text-xs sm:text-sm text-muted-foreground"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               Step {currentStep} of {totalSteps}
-            </p>
+            </motion.p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Form Content */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-8">
+      <motion.section
+        className="py-6 sm:py-12"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="container mx-auto px-3 sm:px-6">
+          <div className="max-w-lg sm:max-w-2xl mx-auto">
+            <motion.div
+              className="bg-card border border-border rounded-xl p-4 sm:p-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               {/* Step 1: Company Information */}
               {currentStep === 1 && (
-                <div className="space-y-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Building className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
@@ -224,7 +280,6 @@ const BrandEnquiry = () => {
                       Tell us about your business and what you do.
                     </p>
                   </div>
-
                   <div>
                     <Label htmlFor="companyName">Company Name *</Label>
                     <Input
@@ -236,8 +291,10 @@ const BrandEnquiry = () => {
                       className="mt-1"
                       required
                     />
+                    {errors.companyName && (
+                      <span className="text-xs text-red-500 mt-1 block">{errors.companyName}</span>
+                    )}
                   </div>
-
                   <div>
                     <Label htmlFor="website">Website</Label>
                     <Input
@@ -249,7 +306,6 @@ const BrandEnquiry = () => {
                       className="mt-1"
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="industry">Industry *</Label>
                     <select
@@ -265,8 +321,41 @@ const BrandEnquiry = () => {
                         <option key={industry} value={industry}>{industry}</option>
                       ))}
                     </select>
+                    {errors.industry && (
+                      <span className="text-xs text-red-500 mt-1 block">{errors.industry}</span>
+                    )}
                   </div>
-
+                  <div>
+                    <Label htmlFor="fullName">Full Name *</Label>
+                    <Input
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      placeholder="Your full name"
+                      className="mt-1"
+                      required
+                    />
+                    {errors.fullName && (
+                      <span className="text-xs text-red-500 mt-1 block">{errors.fullName}</span>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your@email.com"
+                      className="mt-1"
+                      required
+                    />
+                    {errors.email && (
+                      <span className="text-xs text-red-500 mt-1 block">{errors.email}</span>
+                    )}
+                  </div>
                   <div>
                     <Label htmlFor="companySize">Company Size</Label>
                     <select
@@ -284,10 +373,9 @@ const BrandEnquiry = () => {
                   </div>
                 </div>
               )}
-
               {/* Step 2: Contact Information */}
               {currentStep === 2 && (
-                <div className="space-y-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
@@ -297,7 +385,6 @@ const BrandEnquiry = () => {
                       How can we reach you to discuss your project?
                     </p>
                   </div>
-
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="fullName">Full Name *</Label>
@@ -323,7 +410,6 @@ const BrandEnquiry = () => {
                       />
                     </div>
                   </div>
-
                   <div>
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
@@ -337,7 +423,6 @@ const BrandEnquiry = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input
@@ -351,10 +436,9 @@ const BrandEnquiry = () => {
                   </div>
                 </div>
               )}
-
               {/* Step 3: Services & Budget */}
               {currentStep === 3 && (
-                <div className="space-y-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Target className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
@@ -364,7 +448,6 @@ const BrandEnquiry = () => {
                       What services are you interested in and what's your budget?
                     </p>
                   </div>
-
                   <div>
                     <Label>Services Interested In *</Label>
                     <div className="mt-2 grid grid-cols-2 gap-3">
@@ -384,7 +467,6 @@ const BrandEnquiry = () => {
                       ))}
                     </div>
                   </div>
-
                   <div>
                     <Label htmlFor="budget">Budget Range</Label>
                     <select
@@ -400,7 +482,6 @@ const BrandEnquiry = () => {
                       ))}
                     </select>
                   </div>
-
                   <div>
                     <Label htmlFor="timeline">Project Timeline</Label>
                     <select
@@ -418,10 +499,9 @@ const BrandEnquiry = () => {
                   </div>
                 </div>
               )}
-
               {/* Step 4: Challenges & Goals */}
               {currentStep === 4 && (
-                <div className="space-y-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Target className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
@@ -431,7 +511,6 @@ const BrandEnquiry = () => {
                       Help us understand your current situation and objectives.
                     </p>
                   </div>
-
                   <div>
                     <Label htmlFor="challenges">What are your main marketing challenges? *</Label>
                     <Textarea
@@ -445,7 +524,6 @@ const BrandEnquiry = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="goals">What are your primary goals? *</Label>
                     <Textarea
@@ -459,7 +537,6 @@ const BrandEnquiry = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="currentMarketing">Current Marketing Efforts</Label>
                     <Textarea
@@ -474,10 +551,9 @@ const BrandEnquiry = () => {
                   </div>
                 </div>
               )}
-
               {/* Step 5: Additional Information */}
               {currentStep === 5 && (
-                <div className="space-y-6 animate-fade-in">
+                <div className="space-y-6">
                   <div className="text-center mb-8">
                     <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
@@ -487,7 +563,6 @@ const BrandEnquiry = () => {
                       Any additional information that would help us understand your needs better.
                     </p>
                   </div>
-
                   <div>
                     <Label htmlFor="additionalInfo">Additional Information</Label>
                     <Textarea
@@ -500,7 +575,6 @@ const BrandEnquiry = () => {
                       className="mt-1"
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="hearAboutUs">How did you hear about us?</Label>
                     <select
@@ -520,7 +594,6 @@ const BrandEnquiry = () => {
                       <option value="other">Other</option>
                     </select>
                   </div>
-
                   {/* File Upload */}
                   <div>
                     <Label>Upload Files (Optional)</Label>
@@ -536,7 +609,6 @@ const BrandEnquiry = () => {
                   </div>
                 </div>
               )}
-
               {/* Navigation Buttons */}
               <div className="flex justify-between mt-8 pt-6 border-t border-border">
                 <Button
@@ -548,7 +620,6 @@ const BrandEnquiry = () => {
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Previous
                 </Button>
-
                 {currentStep === totalSteps ? (
                   <Button
                     variant="hero"
@@ -569,12 +640,12 @@ const BrandEnquiry = () => {
                   </Button>
                 )}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
-};
+}
 
 export default BrandEnquiry;

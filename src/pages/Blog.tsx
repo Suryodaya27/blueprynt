@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, Calendar, User, Clock, ArrowRight, Tag, TrendingUp, Lightbulb, Target, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -117,20 +119,45 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-background">
+    <div className="min-h-screen pt-24 bg-background relative">
+      <AnimatedBackground />
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-hero">
+      <motion.section
+        className="py-16 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground">
+          <motion.h1
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Insights & Blueprints
-          </h1>
-          <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          </motion.h1>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Deep dives into marketing strategies, case studies, and industry insights 
             from the architects of digital transformation.
-          </p>
-
+          </motion.p>
           {/* Search Bar */}
-          <div className="max-w-md mx-auto relative">
+          <motion.div
+            className="max-w-md mx-auto relative"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
             <Input
               placeholder="Search articles..."
@@ -138,14 +165,26 @@ const Blog = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10 py-3 text-center bg-card border-border"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Categories */}
-      <section className="py-8 bg-card border-b border-border">
+      <motion.section
+        className="py-8 bg-card border-b border-border"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-4">
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {categories.map((category) => {
               const IconComponent = getCategoryIcon(category.id);
               return (
@@ -173,16 +212,35 @@ const Blog = () => {
                 </button>
               );
             })}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Featured Post */}
-      <section className="py-16">
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <h2 className="font-poppins font-bold text-2xl mb-8 text-foreground">Featured Article</h2>
-          
-          <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card transition-all duration-500 group">
+          <motion.h2
+            className="font-poppins font-bold text-2xl mb-8 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Featured Article
+          </motion.h2>
+          <motion.div
+            className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-card transition-all duration-500 group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="grid lg:grid-cols-2">
               {/* Image */}
               <div className="relative h-64 lg:h-auto bg-gradient-to-br from-primary to-cyan">
@@ -194,7 +252,6 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-
               {/* Content */}
               <div className="p-8 lg:p-12">
                 <div className="flex items-center gap-2 mb-4">
@@ -205,15 +262,12 @@ const Blog = () => {
                     </Badge>
                   ))}
                 </div>
-
                 <h3 className="font-poppins font-bold text-2xl lg:text-3xl mb-4 text-foreground group-hover:text-cyan transition-colors">
                   {featuredPost.title}
                 </h3>
-
                 <p className="font-inter text-muted-foreground mb-6 leading-relaxed">
                   {featuredPost.excerpt}
                 </p>
-
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center mr-3">
@@ -232,33 +286,54 @@ const Blog = () => {
                     </div>
                   </div>
                 </div>
-
                 <Button variant="outline" className="group-hover:border-cyan group-hover:text-cyan">
                   Read Full Article
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 bg-card">
+      <motion.section
+        className="py-16 bg-card"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="font-poppins font-bold text-2xl text-foreground">Latest Articles</h2>
-            <p className="font-inter text-muted-foreground">
+            <motion.h2
+              className="font-poppins font-bold text-2xl text-foreground"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              Latest Articles
+            </motion.h2>
+            <motion.p
+              className="font-inter text-muted-foreground"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} found
-            </p>
+            </motion.p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
-              <article
+              <motion.article
                 key={post.id}
-                className="bg-background border border-border rounded-xl overflow-hidden hover:shadow-card hover:-translate-y-2 transition-all duration-500 group animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-background border border-border rounded-xl overflow-hidden hover:shadow-card hover:-translate-y-2 transition-all duration-500 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 {/* Image */}
                 <div className="relative h-48 bg-gradient-to-br from-primary to-cyan">
@@ -275,17 +350,14 @@ const Blog = () => {
                     </Badge>
                   </div>
                 </div>
-
                 {/* Content */}
                 <div className="p-6">
                   <h3 className="font-poppins font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-
                   <p className="font-inter text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
-
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1 mb-4">
                     {post.tags.slice(0, 3).map((tag) => (
@@ -294,7 +366,6 @@ const Blog = () => {
                       </Badge>
                     ))}
                   </div>
-
                   {/* Author & Meta */}
                   <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                     <div className="flex items-center">
@@ -310,16 +381,14 @@ const Blog = () => {
                       {post.readTime}
                     </div>
                   </div>
-
                   <Button variant="outline" size="sm" className="w-full group-hover:border-cyan group-hover:text-cyan">
                     Read More
                     <ArrowRight className="ml-2 w-3 h-3" />
                   </Button>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
-
           {/* Load More */}
           <div className="text-center mt-12">
             <Button variant="outline" size="lg">
@@ -327,20 +396,43 @@ const Blog = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Newsletter Signup */}
-      <section className="py-24 bg-gradient-hero">
+      <motion.section
+        className="py-24 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Stay Updated with BluePrynt Insights
-          </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Get the latest marketing strategies, case studies, and industry insights 
             delivered straight to your inbox.
-          </p>
-
-          <div className="max-w-md mx-auto flex gap-4">
+          </motion.p>
+          <motion.div
+            className="max-w-md mx-auto flex gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <Input
               placeholder="Enter your email"
               className="flex-1"
@@ -349,13 +441,18 @@ const Blog = () => {
               Subscribe
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-          </div>
-
-          <p className="font-inter text-sm text-muted-foreground mt-4">
+          </motion.div>
+          <motion.p
+            className="font-inter text-sm text-muted-foreground mt-4"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             Join 10,000+ marketers getting weekly insights. Unsubscribe anytime.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
