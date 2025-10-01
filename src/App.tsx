@@ -33,7 +33,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="bg-background text-foreground">
           <ScrollToTop />
           <Navigation />
           <Routes>

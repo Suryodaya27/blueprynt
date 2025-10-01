@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Linkedin, Twitter, Award, Target, Lightbulb, Users } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { motion } from "framer-motion";
 import ayushImage from "@/assets/ayush-2.jpg";
 import vruttiImage from "@/assets/vrutti-2.png";
 import suryodayaImage from "@/assets/pandery-2.jpg";
@@ -85,44 +86,98 @@ const About = () => {
   return (
     <div className="min-h-screen pt-24 bg-background relative">
       <AnimatedBackground />
-      
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-hero">
+      <motion.section
+        className="py-16 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground">
+          <motion.h1
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             The Architects Behind BluePrynt
-          </h1>
-          <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             We're not just marketers – we're digital architects building the future 
             of brand experiences, one blueprint at a time.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Story Section */}
-      <section className="py-16">
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground">
+            <motion.h2
+              className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               Our Story
-            </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-6">
+                <motion.p
+                  className="font-inter text-lg text-muted-foreground leading-relaxed mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
                   BluePrynt was born from a simple observation: most marketing agencies were building 
                   campaigns like houses of cards – flashy but fragile. We believed brands deserved 
                   structures built to last.
-                </p>
-                <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-6">
+                </motion.p>
+                <motion.p
+                  className="font-inter text-lg text-muted-foreground leading-relaxed mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
                   Founded by three friends who shared a passion for precision and innovation, we set out 
                   to create marketing solutions with the rigor of architecture and the creativity of art.
-                </p>
-                <p className="font-inter text-lg text-muted-foreground leading-relaxed">
+                </motion.p>
+                <motion.p
+                  className="font-inter text-lg text-muted-foreground leading-relaxed"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                >
                   Today, we've helped 500+ brands build digital foundations that don't just survive 
                   market changes – they thrive in them.
-                </p>
+                </motion.p>
               </div>
-              <div className="relative">
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
                 <div className="bg-gradient-primary rounded-xl p-8 text-primary-foreground">
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
@@ -143,25 +198,39 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Team Section */}
-      <section className="py-16 bg-card">
+      <motion.section
+        className="py-16 bg-card"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Meet the Architects
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
-              <div
+              <motion.div
                 key={member.name}
-                className="bg-background border border-border rounded-xl p-6 text-center hover:shadow-card hover:-translate-y-2 transition-all duration-500 animate-fade-up"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="bg-background border border-border rounded-xl p-6 text-center hover:shadow-card hover:-translate-y-2 transition-all duration-500"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 {/* Avatar */}
                 <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-glow">
@@ -171,19 +240,15 @@ const About = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
                 <h3 className="font-poppins font-semibold text-xl mb-2 text-foreground">
                   {member.name}
                 </h3>
-                
                 <p className="font-inter text-primary font-medium mb-3">
                   {member.role}
                 </p>
-                
                 <p className="font-inter text-muted-foreground text-sm leading-relaxed mb-4">
                   {member.bio}
                 </p>
-
                 {/* Achievements */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {member.achievements.map((achievement) => (
@@ -192,7 +257,6 @@ const About = () => {
                     </Badge>
                   ))}
                 </div>
-
                 {/* Social Links */}
                 <div className="flex justify-center space-x-3">
                   <a
@@ -208,35 +272,47 @@ const About = () => {
                     <Twitter className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Timeline Section */}
-      <section className="py-16">
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Our Journey
-          </h2>
-          
+          </motion.h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
-              
               {milestones.map((milestone, index) => (
-                <div
+                <motion.div
                   key={milestone.year}
-                  className="relative flex items-start mb-12 animate-fade-up"
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  className="relative flex flex-col sm:flex-row items-start mb-12"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   {/* Icon */}
-                  <div className="relative z-10 w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mr-6 shadow-glow">
+                  <div className="relative z-10 w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mr-0 sm:mr-6 shadow-glow mb-4 sm:mb-0">
                     <milestone.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
-                  
                   {/* Content */}
                   <div className="flex-1 bg-card border border-border rounded-xl p-6">
                     <div className="flex items-center mb-3">
@@ -251,68 +327,102 @@ const About = () => {
                       {milestone.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gradient-hero">
+      <motion.section
+        className="py-16 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Our Values
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
-              <div
+              <motion.div
                 key={value.title}
-                className="text-center animate-fade-up"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-glow">
                   <value.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                
                 <h3 className="font-poppins font-semibold text-xl mb-3 text-foreground">
                   {value.title}
                 </h3>
-                
                 <p className="font-inter text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-card">
+      <motion.section
+        className="py-24 bg-card"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Want to Join Our Story?
-          </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             We're always looking for exceptional talent and amazing clients to add to our blueprint.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" asChild>
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Button variant="hero" size="lg" asChild className="hover:scale-110 transition-transform duration-300 shadow-glow text-lg px-8 py-6">
               <a href="/brand-enquiry">
                 Work With Us
                 <ArrowRight className="ml-2" />
               </a>
             </Button>
-            
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild className="hover:scale-105 transition-all duration-300 text-lg px-8 py-6 border-2">
               <a href="/contact">Join Our Team</a>
             </Button>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

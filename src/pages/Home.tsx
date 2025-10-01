@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Search, Bot, Users, Target, TrendingUp, Award, Globe, ShoppingCart, CreditCard, GraduationCap, Heart, Home as HomeIcon, Building, Mouse } from "lucide-react";
@@ -25,195 +26,257 @@ const Home = () => {
     },
     {
       icon: Bot,
-      title: "AI Agents",
-      description: "Intelligent automation systems that work 24/7 to scale your business operations.",
-    },
-    {
-      icon: Zap,
-      title: "AI Prototyping",
-      description: "Rapid AI-powered prototyping that transforms ideas into tangible digital experiences.",
+      title: "AI Solutions",
+      description: "Harness AI to automate, analyze, and accelerate your business growth.",
     },
     {
       icon: Users,
-      title: "Influencer Marketing",
-      description: "Authentic partnerships with creators who align with your brand's BluePrynt.",
+      title: "Branding & Identity",
+      description: "Build a memorable brand that resonates and endures.",
     },
     {
       icon: Target,
-      title: "Social Ads",
-      description: "Precision-targeted campaigns that maximize ROI across all social platforms.",
+      title: "Performance Marketing",
+      description: "Maximize ROI with data-driven campaigns and precision targeting.",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Ecommerce Solutions",
+      description: "Seamless online stores that drive sales and delight customers.",
     },
   ];
 
   const metrics = [
-    { number: "300%", label: "Average ROAS Increase" },
-    { number: "2.5M+", label: "Impressions Generated" },
-    { number: "150+", label: "Successful Campaigns" },
-    { number: "98%", label: "Client Retention Rate" },
+    { number: "300%+", label: "Avg. ROAS Increase" },
+    { number: "48h", label: "Campaign Launch" },
+    { number: "100+", label: "Brands Served" },
+    { number: "10+", label: "Industries" },
   ];
 
   const industries = [
-    { name: "E-commerce", icon: ShoppingCart },
-    { name: "SaaS", icon: Globe },
-    { name: "FinTech", icon: CreditCard },
-    { name: "HealthTech", icon: Heart },
-    { name: "EdTech", icon: GraduationCap },
-    { name: "Real Estate", icon: Building },
+    { icon: Building, name: "Real Estate" },
+    { icon: GraduationCap, name: "Education" },
+    { icon: CreditCard, name: "Fintech" },
+    { icon: Heart, name: "Healthcare" },
+    { icon: ShoppingCart, name: "Ecommerce" },
+    { icon: Users, name: "Social" },
   ];
 
   return (
-    <div className="min-h-screen bg-background relative">
+  <div className="min-h-screen bg-gradient-hero relative pt-5 md:pt-0">
       <AnimatedBackground />
-      
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-background flex items-center justify-center overflow-hidden">
-        
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-6 text-center">
-          <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <h1 className="font-heading font-bold text-6xl md:text-8xl lg:text-9xl mb-8 text-foreground leading-tight animate-fade-up bg-gradient-primary bg-clip-text text-transparent">
-              Where Vision Becomes Reality
-            </h1>
-            
-            <p className="font-body text-xl md:text-3xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              We turn raw potential into structures that stand tall. 
-              Premium marketing solutions with architectural precision.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <Button variant="hero" size="lg" asChild className="hover:scale-110 transition-transform duration-300 shadow-glow text-lg px-8 py-6">
-                <Link to="/brand-enquiry">
-                  Start Your BluePrynt
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              
-              <Button variant="outline" size="lg" asChild className="hover:scale-105 transition-all duration-300 text-lg px-8 py-6 border-2">
-                <Link to="/work">See Our Work</Link>
-              </Button>
+      <section className="min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden shadow-xl">
+        <motion.div
+          className="relative z-10 container mx-auto px-6 text-center"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.h1
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground leading-tight bg-gradient-primary bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Where Vision Becomes Reality
+          </motion.h1>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            We turn raw potential into structures that stand tall.<br />
+            Premium marketing solutions with architectural precision.
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Button variant="hero" size="lg" asChild className="hover:scale-110 transition-transform duration-300 shadow-glow text-lg px-8 py-6">
+              <Link to="/brand-enquiry">
+                Start Your BluePrynt
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="hover:scale-105 transition-all duration-300 text-lg px-8 py-6 border-2">
+              <Link to="/work">See Our Work</Link>
+            </Button>
+          </motion.div>
+          {/* Trust indicators */}
+          <motion.div
+            className="mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <p className="font-body text-base text-muted-foreground mb-8 tracking-wider uppercase">Trusted by industry leaders</p>
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              {["BeReal", "Myntra", "Flipkart", "Sugar Cosmetics", "Zomato"].map((brand, index) => (
+                <motion.div
+                  key={brand}
+                  className="font-heading font-semibold text-xl hover:text-cyan transition-all duration-300 cursor-pointer hover:scale-110 opacity-70 hover:opacity-100"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                >
+                  {brand}
+                </motion.div>
+              ))}
             </div>
-            
-            {/* Trust indicators */}
-            <div className="mt-20 animate-fade-up" style={{ animationDelay: "0.6s" }}>
-              <p className="font-body text-base text-muted-foreground mb-8 tracking-wider uppercase">Trusted by industry leaders</p>
-              <div className="flex flex-wrap justify-center items-center gap-12">
-                {["BeReal", "Myntra", "Flipkart", "Sugar Cosmetics", "Zomato"].map((brand, index) => (
-                  <div 
-                    key={brand} 
-                    className="font-heading font-semibold text-xl hover:text-cyan transition-all duration-300 cursor-pointer hover:scale-110 opacity-70 hover:opacity-100"
-                    style={{ animationDelay: `${0.7 + index * 0.1}s` }}
-                  >
-                    {brand}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Mouse className="w-8 h-8 text-cyan animate-glow-pulse" strokeWidth={1.5} />
-          <div className="w-8 h-12 border-2 border-cyan rounded-full flex justify-center shadow-glow bg-cyan/10 mt-2">
-            <div className="w-1.5 h-4 bg-gradient-cyan rounded-full mt-2 animate-glow-pulse shadow-glow" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
+      {/* ...existing code... */}
 
       {/* Services Section */}
-      <section className="py-32 bg-gradient-hero relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20 animate-fade-up">
-            <h2 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl mb-8 text-foreground">
+      <section className="py-16 bg-gradient-hero relative overflow-hidden">
+        <motion.div
+          className="container mx-auto px-6 relative z-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="text-center mb-8 animate-fade-up">
+            <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground">
               BluePrynt Your Success
             </h2>
-            <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-6 max-w-3xl mx-auto">
               Five core pillars that form the foundation of every successful digital transformation.
             </p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
-              <ServiceCard
+              <motion.div
                 key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                delay={index * 100}
-              />
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  delay={index * 100}
+                />
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Metrics Section */}
-      <section className="py-32 bg-card border-y border-border relative overflow-hidden">
+      <section className="py-16 bg-card border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-primary opacity-5" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+        <motion.div
+          className="container mx-auto px-6 relative z-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
-              <div key={metric.label} className="text-center animate-fade-up group cursor-default" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl bg-gradient-primary bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-300">
+              <motion.div
+                key={metric.label}
+                className="text-center group cursor-default"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="font-poppins font-bold text-3xl bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">
                   {metric.number}
                 </div>
-                <div className="font-body text-base md:text-lg text-muted-foreground group-hover:text-cyan transition-colors">
+                <div className="font-inter text-sm text-muted-foreground group-hover:text-cyan transition-colors">
                   {metric.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Industries Section */}
       <section className="py-24">
-        <div className="container mx-auto px-6">
+        <motion.div
+          className="container mx-auto px-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Industries We Transform
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               From startups to enterprises, we craft solutions that stand the test of time.
             </p>
           </div>
-          
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
             {industries.map((industry, index) => (
-              <div 
+              <motion.div
                 key={industry.name}
-                className="bg-card border border-border rounded-lg p-6 text-center hover:bg-card-hover hover:border-border-bright transition-all duration-300 animate-fade-up group cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-card border border-border rounded-lg p-6 text-center hover:bg-card-hover hover:border-border-bright transition-all duration-300 group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <industry.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:text-cyan transition-colors duration-300 group-hover:scale-110 transform" />
                 <p className="font-inter font-medium text-sm text-foreground group-hover:text-cyan transition-colors">
                   {industry.name}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Additional Features Section */}
       <section className="py-24 bg-card border-y border-border">
-        <div className="container mx-auto px-6">
+        <motion.div
+          className="container mx-auto px-6"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Why Choose BluePrynt?
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               More than an agency – we're your strategic partners in digital transformation.
             </p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
+            {[ 
               { icon: Award, title: "Proven Results", desc: "300% average ROAS increase across all campaigns" },
               { icon: Zap, title: "Lightning Fast", desc: "Deploy campaigns in 48 hours, not weeks" },
               { icon: TrendingUp, title: "Data-Driven", desc: "Every decision backed by real performance data" },
               { icon: HomeIcon, title: "Full-Service", desc: "End-to-end solutions under one roof" }
             ].map((feature, index) => (
-              <div key={feature.title} className="text-center animate-fade-up group" style={{ animationDelay: `${index * 100}ms` }}>
+              <motion.div
+                key={feature.title}
+                className="text-center group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
                 <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 shadow-glow group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
@@ -223,20 +286,20 @@ const Home = () => {
                 <p className="font-inter text-sm text-muted-foreground">
                   {feature.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Process Section */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Our BluePrynt Process
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               A proven methodology that turns vision into measurable results.
             </p>
           </div>
@@ -279,10 +342,10 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
             Find Your Missing Piece Today
           </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="font-inter text-base md:text-lg text-muted-foreground mb-6 max-w-xl mx-auto">
             Every great structure starts with a solid BluePrynt. Let's build yours.
           </p>
           

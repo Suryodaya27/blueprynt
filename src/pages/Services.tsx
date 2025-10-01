@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Globe, Search, Bot, Users, Target, Check, Zap, TrendingUp, Award, BarChart, Lightbulb } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -190,25 +191,47 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-24 bg-background relative">
       <AnimatedBackground />
-      
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-hero">
+      <motion.section
+        className="py-16 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground">
+          <motion.h1
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Services That Build Success
-          </h1>
-          <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          </motion.h1>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Five core pillars of digital marketing, engineered with precision and designed for scale. 
             Each service is a building block in your growth architecture.
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+          </motion.p>
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {services.map((service, index) => (
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className="group p-4 rounded-lg border border-border hover:border-border-bright transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group p-4 rounded-lg border border-border hover:border-border-bright transition-all duration-300"
               >
                 <service.icon className="w-8 h-8 text-primary mx-auto mb-2 group-hover:text-cyan transition-colors" />
                 <p className="font-inter text-sm text-foreground group-hover:text-cyan transition-colors">
@@ -216,20 +239,24 @@ const Services = () => {
                 </p>
               </a>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Detailed Sections */}
       {services.map((service, index) => (
-        <section
+        <motion.section
           key={service.id}
           id={service.id}
           className={`py-20 ${index % 2 === 0 ? "bg-background" : "bg-card"}`}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: index * 0.1 }}
         >
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Content */}
                 <div className={index % 2 === 0 ? "order-1" : "order-2"}>
                   <div className="flex items-center mb-6">
@@ -245,11 +272,9 @@ const Services = () => {
                       </p>
                     </div>
                   </div>
-                  
                   <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-8">
                     {service.description}
                   </p>
-
                   {/* Features */}
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {service.features.map((feature) => (
@@ -259,7 +284,6 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-
                   {/* Results & Pricing */}
                   <div className="bg-muted rounded-xl p-6 mb-8">
                     <div className="grid md:grid-cols-2 gap-4">
@@ -279,7 +303,6 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-
                   <Button variant="hero" asChild>
                     <a href="/brand-enquiry">
                       Get Started
@@ -287,14 +310,12 @@ const Services = () => {
                     </a>
                   </Button>
                 </div>
-
                 {/* Process */}
                 <div className={index % 2 === 0 ? "order-2" : "order-1"}>
                   <div className="bg-gradient-to-br from-card to-card-hover rounded-xl p-8 border border-border">
                     <h3 className="font-poppins font-semibold text-xl mb-6 text-foreground">
                       Our Process
                     </h3>
-                    
                     <div className="space-y-6">
                       {service.process.map((step, stepIndex) => (
                         <div key={stepIndex} className="flex items-start">
@@ -319,33 +340,55 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       ))}
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-hero">
+      <motion.section
+        className="py-24 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Ready to Build Your Growth Architecture?
-          </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Let's discuss which services will form the foundation of your success story.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <Button variant="hero" size="lg" asChild>
               <a href="/brand-enquiry">
                 Start Your Blueprint
                 <ArrowRight className="ml-2" />
               </a>
             </Button>
-            
             <Button variant="outline" size="lg" asChild>
               <a href="/contact">Schedule a Consultation</a>
             </Button>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

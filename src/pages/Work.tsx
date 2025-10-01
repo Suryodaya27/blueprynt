@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, ArrowRight, TrendingUp, Users, Eye, MousePointer, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Work = () => {
   const [filter, setFilter] = useState("all");
@@ -125,20 +127,45 @@ const Work = () => {
     : caseStudies.filter(study => study.category === filter);
 
   return (
-    <div className="min-h-screen pt-24 bg-background">
+    <div className="min-h-screen pt-24 bg-background relative">
+      <AnimatedBackground />
+
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-hero">
+      <motion.section
+        className="py-16 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h1 className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground">
+          <motion.h1
+            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Our Blueprint Gallery
-          </h1>
-          <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          </motion.h1>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Every structure tells a story. Here are the digital foundations we've built 
             that transformed businesses and drove extraordinary results.
-          </p>
-          
+          </motion.p>
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {filters.map((filterItem) => (
               <Button
                 key={filterItem.id}
@@ -149,19 +176,28 @@ const Work = () => {
                 {filterItem.label}
               </Button>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Case Studies Grid */}
-      <section className="py-16">
+      <motion.section
+        className="py-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCases.map((study, index) => (
-              <div
+              <motion.div
                 key={study.id}
-                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-card hover:-translate-y-2 transition-all duration-500 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-card hover:-translate-y-2 transition-all duration-500"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br overflow-hidden">
@@ -184,11 +220,9 @@ const Work = () => {
                   <h3 className="font-poppins font-semibold text-xl mb-3 text-foreground group-hover:text-cyan transition-colors">
                     {study.title}
                   </h3>
-                  
                   <p className="font-inter text-muted-foreground mb-4 leading-relaxed">
                     {study.description}
                   </p>
-
                   {/* Metrics */}
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {study.metrics.slice(0, 4).map((metric, idx) => (
@@ -202,7 +236,6 @@ const Work = () => {
                       </div>
                     ))}
                   </div>
-
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {study.tags.map((tag) => (
@@ -211,29 +244,45 @@ const Work = () => {
                       </Badge>
                     ))}
                   </div>
-
                   {/* CTA */}
                   <Button variant="outline" className="w-full group-hover:border-cyan group-hover:text-cyan">
                     View Case Study
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-hero">
+      <motion.section
+        className="py-24 bg-gradient-hero"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+          <motion.h2
+            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Ready to Build Your Success Story?
-          </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Join the ranks of industry leaders who've transformed their business with BluePrynt.
-          </p>
-          
+          </motion.p>
           <Button variant="hero" size="lg" asChild>
             <a href="/brand-enquiry">
               Start Your Blueprint
@@ -241,7 +290,7 @@ const Work = () => {
             </a>
           </Button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

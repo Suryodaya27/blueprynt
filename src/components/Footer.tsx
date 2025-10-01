@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Instagram, Youtube, Twitter, Square } from "lucide-react";
-import logoImage from "@/assets/blueprynt-logo.png";
+import logoImage from "@/assets/bp-2.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
