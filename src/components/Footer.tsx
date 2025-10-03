@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card border-t border-border z-20 relative w-full shadow-lg">
       <div className="container mx-auto px-6 py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
@@ -44,7 +44,7 @@ const Footer = () => {
                 className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
-            <p className="font-inter text-muted-foreground mb-6 leading-relaxed">
+            <p className="font-outfit text-muted-foreground mb-6 leading-relaxed">
               Where vision becomes reality. We turn raw potential into structures that stand tall.
             </p>
             <div className="flex space-x-4">
@@ -63,13 +63,13 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-poppins font-semibold text-foreground mb-4">Company</h3>
+            <h3 className="font-outfit font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="font-inter text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
+                    className="font-outfit text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
                   >
                     {link.name}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-cyan transition-all duration-300 group-hover:w-full" />
@@ -81,13 +81,13 @@ const Footer = () => {
 
           {/* Collaborate Links */}
           <div>
-            <h3 className="font-poppins font-semibold text-foreground mb-4">Collaborate</h3>
+            <h3 className="font-outfit font-semibold text-foreground mb-4">Collaborate</h3>
             <ul className="space-y-3">
               {footerLinks.collaborate.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="font-inter text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
+                    className="font-outfit text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
                   >
                     {link.name}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-cyan transition-all duration-300 group-hover:w-full" />
@@ -99,13 +99,13 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-poppins font-semibold text-foreground mb-4">Legal</h3>
+            <h3 className="font-outfit font-semibold text-foreground mb-4">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="font-inter text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
+                    className="font-outfit text-muted-foreground hover:text-cyan transition-colors duration-300 group relative"
                   >
                     {link.name}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-cyan transition-all duration-300 group-hover:w-full" />
@@ -118,10 +118,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="font-inter text-muted-foreground text-sm">
+          <p className="font-outfit text-muted-foreground text-sm">
             © {currentYear} BluePrynt. All rights reserved.
           </p>
-          <p className="font-inter text-muted-foreground text-sm flex items-center">
+          <p className="font-outfit text-muted-foreground text-sm flex items-center">
             Find your missing piece.
             <Square className="ml-2 w-3 h-3 text-cyan animate-pulse transform rotate-45" />
           </p>

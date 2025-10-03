@@ -132,7 +132,7 @@ const Blog = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -141,7 +141,7 @@ const Blog = () => {
             Insights & Blueprints
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -198,7 +198,7 @@ const Blog = () => {
                   }`}
                 >
                   <IconComponent className="w-4 h-4 mr-2" />
-                  <span className="font-inter font-medium">{category.label}</span>
+                  <span className="font-outfit font-medium">{category.label}</span>
                   <Badge 
                     variant="secondary" 
                     className={`ml-2 ${
@@ -226,7 +226,7 @@ const Blog = () => {
       >
         <div className="container mx-auto px-6">
           <motion.h2
-            className="font-poppins font-bold text-2xl mb-8 text-foreground"
+            className="font-outfit font-bold text-2xl mb-8 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -248,7 +248,7 @@ const Blog = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <Lightbulb className="w-16 h-16 mx-auto mb-4 opacity-80" />
-                    <h3 className="font-poppins font-bold text-2xl">Featured</h3>
+                    <h3 className="font-outfit font-bold text-2xl">Featured</h3>
                   </div>
                 </div>
               </div>
@@ -262,10 +262,10 @@ const Blog = () => {
                     </Badge>
                   ))}
                 </div>
-                <h3 className="font-poppins font-bold text-2xl lg:text-3xl mb-4 text-foreground group-hover:text-cyan transition-colors">
+                <h3 className="font-outfit font-bold text-2xl lg:text-3xl mb-4 text-foreground group-hover:text-cyan transition-colors">
                   {featuredPost.title}
                 </h3>
-                <p className="font-inter text-muted-foreground mb-6 leading-relaxed">
+                <p className="font-outfit text-muted-foreground mb-6 leading-relaxed">
                   {featuredPost.excerpt}
                 </p>
                 <div className="flex items-center justify-between mb-6">
@@ -274,7 +274,7 @@ const Blog = () => {
                       <User className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="font-inter font-medium text-foreground text-sm">
+                      <p className="font-outfit font-medium text-foreground text-sm">
                         {featuredPost.author}
                       </p>
                       <div className="flex items-center text-muted-foreground text-xs">
@@ -307,7 +307,7 @@ const Blog = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-8">
             <motion.h2
-              className="font-poppins font-bold text-2xl text-foreground"
+              className="font-outfit font-bold text-2xl text-foreground"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -316,7 +316,7 @@ const Blog = () => {
               Latest Articles
             </motion.h2>
             <motion.p
-              className="font-inter text-muted-foreground"
+              className="font-outfit text-muted-foreground"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -340,8 +340,8 @@ const Blog = () => {
                   <div className="absolute inset-0 bg-gradient-primary opacity-60" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
-                      <div className="font-poppins font-bold text-sm opacity-80">#{post.id}</div>
-                      <div className="font-inter text-xs opacity-60 mt-1">{post.category}</div>
+                      <div className="font-outfit font-bold text-sm opacity-80">#{post.id}</div>
+                      <div className="font-outfit text-xs opacity-60 mt-1">{post.category}</div>
                     </div>
                   </div>
                   <div className="absolute top-4 left-4">
@@ -352,10 +352,10 @@ const Blog = () => {
                 </div>
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-poppins font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors line-clamp-2">
+                  <h3 className="font-outfit font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="font-inter text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="font-outfit text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                   {/* Tags */}
@@ -408,7 +408,7 @@ const Blog = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h2
-            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            className="font-outfit font-bold text-4xl md:text-5xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -417,7 +417,7 @@ const Blog = () => {
             Stay Updated with BluePrynt Insights
           </motion.h2>
           <motion.p
-            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -443,7 +443,7 @@ const Blog = () => {
             </Button>
           </motion.div>
           <motion.p
-            className="font-inter text-sm text-muted-foreground mt-4"
+            className="font-outfit text-sm text-muted-foreground mt-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

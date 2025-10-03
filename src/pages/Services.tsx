@@ -202,7 +202,7 @@ const Services = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -211,7 +211,7 @@ const Services = () => {
             Services That Build Success
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -234,7 +234,7 @@ const Services = () => {
                 className="group p-4 rounded-lg border border-border hover:border-border-bright transition-all duration-300"
               >
                 <service.icon className="w-8 h-8 text-primary mx-auto mb-2 group-hover:text-cyan transition-colors" />
-                <p className="font-inter text-sm text-foreground group-hover:text-cyan transition-colors">
+                <p className="font-outfit text-sm text-foreground group-hover:text-cyan transition-colors">
                   {service.title}
                 </p>
               </a>
@@ -264,15 +264,15 @@ const Services = () => {
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h2 className="font-poppins font-bold text-3xl md:text-4xl text-foreground">
+                      <h2 className="font-outfit font-bold text-3xl md:text-4xl text-foreground">
                         {service.title}
                       </h2>
-                      <p className="font-inter text-lg text-primary font-medium">
+                      <p className="font-outfit text-lg text-primary font-medium">
                         {service.subtitle}
                       </p>
                     </div>
                   </div>
-                  <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-8">
+                  <p className="font-outfit text-lg text-muted-foreground leading-relaxed mb-8">
                     {service.description}
                   </p>
                   {/* Features */}
@@ -280,7 +280,7 @@ const Services = () => {
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-center">
                         <Check className="w-5 h-5 text-primary mr-2 flex-shrink-0" />
-                        <span className="font-inter text-sm text-foreground">{feature}</span>
+                        <span className="font-outfit text-sm text-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -290,16 +290,16 @@ const Services = () => {
                       <div>
                         <div className="flex items-center mb-2">
                           <TrendingUp className="w-5 h-5 text-primary mr-2" />
-                          <span className="font-inter font-semibold text-foreground">Results</span>
+                          <span className="font-outfit font-semibold text-foreground">Results</span>
                         </div>
-                        <p className="font-inter text-sm text-muted-foreground">{service.results}</p>
+                        <p className="font-outfit text-sm text-muted-foreground">{service.results}</p>
                       </div>
                       <div>
                         <div className="flex items-center mb-2">
                           <Award className="w-5 h-5 text-primary mr-2" />
-                          <span className="font-inter font-semibold text-foreground">Investment</span>
+                          <span className="font-outfit font-semibold text-foreground">Investment</span>
                         </div>
-                        <p className="font-inter text-sm text-muted-foreground">{service.pricing}</p>
+                        <p className="font-outfit text-sm text-muted-foreground">{service.pricing}</p>
                       </div>
                     </div>
                   </div>
@@ -313,22 +313,22 @@ const Services = () => {
                 {/* Process */}
                 <div className={index % 2 === 0 ? "order-2" : "order-1"}>
                   <div className="bg-gradient-to-br from-card to-card-hover rounded-xl p-8 border border-border">
-                    <h3 className="font-poppins font-semibold text-xl mb-6 text-foreground">
+                    <h3 className="font-outfit font-semibold text-xl mb-6 text-foreground">
                       Our Process
                     </h3>
                     <div className="space-y-6">
                       {service.process.map((step, stepIndex) => (
                         <div key={stepIndex} className="flex items-start">
                           <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-blue">
-                            <span className="font-poppins font-bold text-sm text-primary-foreground">
+                            <span className="font-outfit font-bold text-sm text-primary-foreground">
                               {stepIndex + 1}
                             </span>
                           </div>
                           <div>
-                            <h4 className="font-poppins font-semibold text-foreground mb-1">
+                            <h4 className="font-outfit font-semibold text-foreground mb-1">
                               {step.step}
                             </h4>
-                            <p className="font-inter text-sm text-muted-foreground leading-relaxed">
+                            <p className="font-outfit text-sm text-muted-foreground leading-relaxed">
                               {step.description}
                             </p>
                           </div>
@@ -353,7 +353,7 @@ const Services = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h2
-            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            className="font-outfit font-bold text-4xl md:text-5xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -362,7 +362,7 @@ const Services = () => {
             Ready to Build Your Growth Architecture?
           </motion.h2>
           <motion.p
-            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

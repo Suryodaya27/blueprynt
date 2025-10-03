@@ -63,7 +63,7 @@ const Home = () => {
   ];
 
   return (
-   <div className="bg-background relative">
+    <div className="bg-background relative z-10">
       <AnimatedBackground />
       {/* Hero Section */}
       <section className="min-h-screen lg:pt-0 pt-24 relative  flex items-center justify-center overflow-hidden shadow-xl">
@@ -75,16 +75,18 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 leading-tight bg-gradient-primary bg-clip-text text-transparent"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 leading-tight"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Where Vision Becomes Reality
+            <span className="block md:inline whitespace-normal break-words">
+              Where <span className="font-[cursive] italic text-cyan-400 text-5xl md:text-7xl drop-shadow-xl tracking-tight">Vision</span> Becomes <span className="font-[cursive] italic text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600 bg-clip-text text-5xl md:text-7xl font-extrabold drop-shadow-xl tracking-normal">Reality</span>
+            </span>
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -111,28 +113,32 @@ const Home = () => {
             </Button>
           </motion.div>
           {/* Trust indicators */}
-          <motion.div
-            className="mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p className="font-body text-base text-muted-foreground mb-8 tracking-wider uppercase">Trusted by industry leaders</p>
-            <div className="flex flex-wrap justify-center items-center gap-12">
-              {["BeReal", "Myntra", "Flipkart", "Sugar Cosmetics", "Zomato"].map((brand, index) => (
-                <motion.div
-                  key={brand}
-                  className="font-heading font-semibold text-xl hover:text-cyan transition-all duration-300 cursor-pointer hover:scale-110 opacity-70 hover:opacity-100"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                >
-                  {brand}
-                </motion.div>
-              ))}
-            </div>
+          <motion.div className="overflow-hidden relative w-full py-14">
+            <p className="font-outfit text-base mb-8 tracking-wider uppercase text-center">
+              Trusted by industry leaders
+            </p>
+            <motion.div
+              className="flex gap-16 whitespace-nowrap"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                ease: "linear",
+               duration: typeof window !== "undefined" && window.innerWidth < 768 ? 12 : 25,
+                repeat: Infinity,
+              }}
+            >
+              {[...Array(3)].map((_, i) =>
+                ["BeReal", "Myntra", "Flipkart", "Sugar Cosmetics", "Zomato"].map(
+                  (brand, index) => (
+                    <span
+                      key={`${brand}-${i}-${index}`}
+                      className="font-outfit font-semibold text-xl hover:text-cyan transition-all duration-300 cursor-pointer hover:scale-110 opacity-70 hover:opacity-100"
+                    >
+                      {brand}
+                    </span>
+                  )
+                )
+              )}
+            </motion.div>
           </motion.div>
         </motion.div>
       </section>
@@ -148,10 +154,10 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="text-center mb-8 animate-fade-up">
-            <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground">
+            <h2 className="font-outfit font-bold text-3xl md:text-4xl mb-8 text-center text-foreground">
               BluePrynt Your Success
             </h2>
-            <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-6 max-w-3xl mx-auto">
+            <p className="font-outfit text-lg text-muted-foreground leading-relaxed mb-6 max-w-3xl mx-auto">
               Five core pillars that form the foundation of every successful digital transformation.
             </p>
           </div>
@@ -196,10 +202,10 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="font-poppins font-bold text-3xl bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="font-outfit font-bold text-3xl bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300">
                   {metric.number}
                 </div>
-                <div className="font-inter text-sm text-muted-foreground group-hover:text-cyan transition-colors">
+                <div className="font-outfit text-sm text-muted-foreground group-hover:text-cyan transition-colors">
                   {metric.label}
                 </div>
               </motion.div>
@@ -218,10 +224,10 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
+            <h2 className="font-outfit font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Industries We Transform
             </h2>
-            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-outfit text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               From startups to enterprises, we craft solutions that stand the test of time.
             </p>
           </div>
@@ -236,7 +242,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <industry.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:text-cyan transition-colors duration-300 group-hover:scale-110 transform" />
-                <p className="font-inter font-medium text-sm text-foreground group-hover:text-cyan transition-colors">
+                <p className="font-outfit font-medium text-sm text-foreground group-hover:text-cyan transition-colors">
                   {industry.name}
                 </p>
               </motion.div>
@@ -255,15 +261,15 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
+            <h2 className="font-outfit font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Why Choose BluePrynt?
             </h2>
-            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-outfit text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               More than an agency – we're your strategic partners in digital transformation.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[ 
+            {[
               { icon: Award, title: "Proven Results", desc: "300% average ROAS increase across all campaigns" },
               { icon: Zap, title: "Lightning Fast", desc: "Deploy campaigns in 48 hours, not weeks" },
               { icon: TrendingUp, title: "Data-Driven", desc: "Every decision backed by real performance data" },
@@ -280,10 +286,10 @@ const Home = () => {
                 <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 shadow-glow group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="font-poppins font-semibold text-lg mb-2 text-foreground group-hover:text-cyan transition-colors">
+                <h3 className="font-outfit font-semibold text-lg mb-2 text-foreground group-hover:text-cyan transition-colors">
                   {feature.title}
                 </h3>
-                <p className="font-inter text-sm text-muted-foreground">
+                <p className="font-outfit text-sm text-muted-foreground">
                   {feature.desc}
                 </p>
               </motion.div>
@@ -296,14 +302,14 @@ const Home = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
+            <h2 className="font-outfit font-bold text-2xl md:text-4xl mb-4 text-foreground">
               Our BluePrynt Process
             </h2>
-            <p className="font-inter text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-outfit text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               A proven methodology that turns vision into measurable results.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               { step: "01", title: "Discovery", desc: "Deep dive into your brand, audience, and objectives" },
@@ -317,10 +323,10 @@ const Home = () => {
                     <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 text-primary-foreground font-bold text-lg shadow-glow group-hover:scale-110 transition-transform">
                       {step.step}
                     </div>
-                    <h3 className="font-poppins font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors">
+                    <h3 className="font-outfit font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors">
                       {step.title}
                     </h3>
-                    <p className="font-inter text-sm text-muted-foreground leading-relaxed">
+                    <p className="font-outfit text-sm text-muted-foreground leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -340,15 +346,15 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-primary opacity-5" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-cyan rounded-lg opacity-10 animate-float" />
         </div>
-        
+
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="font-poppins font-bold text-2xl md:text-4xl mb-4 text-foreground">
+          <h2 className="font-outfit font-bold text-2xl md:text-4xl mb-4 text-foreground">
             Find Your Missing Piece Today
           </h2>
-          <p className="font-inter text-base md:text-lg text-muted-foreground mb-6 max-w-xl mx-auto">
+          <p className="font-outfit text-base md:text-lg text-muted-foreground mb-6 max-w-xl mx-auto">
             Every great structure starts with a solid BluePrynt. Let's build yours.
           </p>
-          
+
           <Button variant="hero" size="lg" asChild>
             <Link to="/brand-enquiry">
               Start Your BluePrynt

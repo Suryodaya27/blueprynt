@@ -22,11 +22,11 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardP
           <Icon className="w-6 h-6 text-primary-foreground" />
         </div>
         
-        <h3 className="font-poppins font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors duration-300">
+        <h3 className="font-outfit font-semibold text-lg mb-3 text-foreground group-hover:text-cyan transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="font-inter text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
+        <p className="font-outfit text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
           {description}
         </p>
       </div>
