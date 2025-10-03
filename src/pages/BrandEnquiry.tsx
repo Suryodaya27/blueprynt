@@ -112,7 +112,7 @@ function BrandEnquiry() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-24 bg-background flex items-center justify-center">
+      <div className="min-h-screen pt-24 flex items-center justify-center">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center animate-scale-in">
             <div className="relative mb-8">
