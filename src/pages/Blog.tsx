@@ -119,12 +119,12 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-background relative">
+    <div className="min-h-screen pt-24 relative">
       <AnimatedBackground />
 
       {/* Hero Section */}
       <motion.section
-        className="py-16 bg-gradient-hero"
+        className="py-16"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

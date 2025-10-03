@@ -37,19 +37,18 @@ const Navigation = () => {
   ];
 
   return (
-  <nav
+    <nav
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
-        ${
-          window.innerWidth < 768
-            ? "bg-background/95 backdrop-blur-xl border-b border-border"
-            : scrolled
-              ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-glow"
-              : "bg-transparent"
+        ${window.innerWidth < 768
+          ? "bg-background/95 backdrop-blur-xl border-b border-border"
+          : scrolled
+            ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-glow"
+            : "bg-transparent"
         }`}
     >
-  <div className="container mx-auto px-5 sm:px-8 md:px-12 py-2 md:py-3">
-  <div className="flex items-center justify-between min-h-[56px] md:min-h-[64px]">
+      <div className="container mx-auto px-5 sm:px-8 md:px-12 py-2 md:py-3">
+        <div className="flex items-center justify-between min-h-[56px] md:min-h-[64px]">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group relative">
             <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500" />
@@ -58,7 +57,8 @@ const Navigation = () => {
               alt="BluePrynt - Premium Marketing Agency"
               className="h-10 md:h-14 w-auto transition-all duration-700 group-hover:scale-110 group-hover:rotate-2 drop-shadow-2xl relative z-10"
               style={{ filter: 'drop-shadow(0 0 24px rgba(14, 165, 255, 0.5))' }}
-            />
+              onClick={() => setIsOpen(false)}
+                />
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,23 +67,21 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`font-body font-semibold text-base transition-all duration-500 hover:text-cyan relative group ${
-                  location.pathname === item.path ? "text-cyan" : "text-foreground"
-                }`}
+                className={`font-body font-semibold text-base transition-all duration-500 hover:text-cyan relative group ${location.pathname === item.path ? "text-cyan" : "text-foreground"
+                  }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-primary transition-all duration-500 ${
-                  location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-primary transition-all duration-500 ${location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
             ))}
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <Button 
-              variant="outline" 
-              asChild 
+            <Button
+              variant="outline"
+              asChild
               className="hover:scale-105 transition-all duration-300 border-2 hover:border-cyan hover:shadow-glow font-semibold"
             >
               <Link to="/brand-enquiry">Start Your BluePrynt</Link>
@@ -110,9 +108,8 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body font-semibold text-lg py-2 transition-all duration-300 hover:text-cyan hover:translate-x-2 ${
-                    location.pathname === item.path ? "text-cyan" : "text-foreground"
-                  }`}
+                  className={`font-body font-semibold text-lg py-2 transition-all duration-300 hover:text-cyan hover:translate-x-2 ${location.pathname === item.path ? "text-cyan" : "text-foreground"
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -120,7 +117,9 @@ const Navigation = () => {
               ))}
               <div className="pt-4 border-t border-border animate-fade-in" style={{ animationDelay: "0.5s" }}>
                 <Button variant="outline" className="w-full hover:scale-105 transition-transform duration-300" asChild>
-                  <Link to="/brand-enquiry">Start Your BluePrynt</Link>
+                  <Link to="/brand-enquiry" onClick={() => setIsOpen(false)}>
+                    Start Your BluePrynt
+                  </Link>
                 </Button>
               </div>
             </div>
