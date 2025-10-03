@@ -5,7 +5,8 @@ import React, { useState } from 'react';
 import mainImage from '@/assets/background-image.png';
 
 const fallbackSVG = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" className="w-full h-full"
+    preserveAspectRatio="xMidYMid slice">
     <defs>
       <pattern id="a" width={20} height={20} patternUnits="userSpaceOnUse">
         <path
