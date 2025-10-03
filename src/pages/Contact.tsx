@@ -98,7 +98,7 @@ function Contact() {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -107,7 +107,7 @@ function Contact() {
             Let's Build Something Amazing
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -136,10 +136,10 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <h2 className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-foreground">
+              <h2 className="font-outfit font-bold text-3xl md:text-4xl mb-8 text-foreground">
                 Get In Touch
               </h2>
-              <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="font-outfit text-lg text-muted-foreground leading-relaxed mb-8">
                 Whether you're a startup looking to make your mark or an enterprise 
                 ready to scale, we're here to help you build the foundation for lasting success.
               </p>
@@ -157,11 +157,11 @@ function Contact() {
                       <info.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-poppins font-semibold text-foreground mb-2">
+                      <h3 className="font-outfit font-semibold text-foreground mb-2">
                         {info.title}
                       </h3>
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className="font-inter text-muted-foreground">
+                        <p key={idx} className="font-outfit text-muted-foreground">
                           {detail}
                         </p>
                       ))}
@@ -202,16 +202,16 @@ function Contact() {
               {isSubmitted ? (
                 <div className="text-center py-12 animate-scale-in">
                   <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="font-poppins font-semibold text-xl text-foreground mb-2">
+                  <h3 className="font-outfit font-semibold text-xl text-foreground mb-2">
                     Message Sent!
                   </h3>
-                  <p className="font-inter text-muted-foreground">
+                  <p className="font-outfit text-muted-foreground">
                     Thanks for reaching out. We'll get back to you within 24 hours.
                   </p>
                 </div>
               ) : (
                 <>
-                  <h3 className="font-poppins font-bold text-2xl mb-6 text-foreground">
+                  <h3 className="font-outfit font-bold text-2xl mb-6 text-foreground">
                     Send Us a Message
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -277,7 +277,7 @@ function Contact() {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                        className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
@@ -324,7 +324,7 @@ function Contact() {
       >
         <div className="container mx-auto px-6">
           <motion.h2
-            className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground"
+            className="font-outfit font-bold text-3xl md:text-4xl mb-8 text-center text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -341,18 +341,18 @@ function Contact() {
           >
             <div className="bg-muted rounded-xl p-8 text-center">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-poppins font-semibold text-xl text-foreground mb-4">
+              <h3 className="font-outfit font-semibold text-xl text-foreground mb-4">
                 We're Located Across India
               </h3>
-              <p className="font-inter text-muted-foreground mb-6">
+              <p className="font-outfit text-muted-foreground mb-6">
                 With offices in Mumbai, Delhi, and Bangalore, we're always close to our clients. 
                 Schedule a visit to see our team in action.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 {['Mumbai', 'Delhi', 'Bangalore'].map((city) => (
                   <div key={city} className="bg-background rounded-lg p-4 border border-border">
-                    <h4 className="font-poppins font-semibold text-foreground mb-2">{city}</h4>
-                    <p className="font-inter text-sm text-muted-foreground">
+                    <h4 className="font-outfit font-semibold text-foreground mb-2">{city}</h4>
+                    <p className="font-outfit text-sm text-muted-foreground">
                       Schedule a visit to our {city} office
                     </p>
                   </div>

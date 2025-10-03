@@ -125,17 +125,17 @@ function BrandEnquiry() {
               <div className="absolute -bottom-2 left-8 w-4 h-4 bg-cyan rounded-sm animate-float opacity-50" style={{ animationDelay: "1s" }} />
             </div>
             
-            <h1 className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground">
+            <h1 className="font-outfit font-bold text-4xl md:text-5xl mb-6 text-foreground">
               Your Blueprint is in Motion
             </h1>
             
-            <p className="font-inter text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="font-outfit text-xl text-muted-foreground mb-8 leading-relaxed">
               Thank you for sharing your vision with us! Our team is already reviewing your 
               requirements and will get back to you within 24 hours with a custom blueprint.
             </p>
             
             <div className="bg-card border border-border rounded-xl p-6 mb-8">
-              <h3 className="font-poppins font-semibold text-lg text-foreground mb-4">
+              <h3 className="font-outfit font-semibold text-lg text-foreground mb-4">
                 What happens next?
               </h3>
               <div className="space-y-3 text-left">
@@ -143,19 +143,19 @@ function BrandEnquiry() {
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3">
                     <span className="text-xs font-bold text-primary-foreground">1</span>
                   </div>
-                  <span className="font-inter text-muted-foreground">Strategy session within 24 hours</span>
+                  <span className="font-outfit text-muted-foreground">Strategy session within 24 hours</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3">
                     <span className="text-xs font-bold text-primary-foreground">2</span>
                   </div>
-                  <span className="font-inter text-muted-foreground">Custom blueprint presentation</span>
+                  <span className="font-outfit text-muted-foreground">Custom blueprint presentation</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3">
                     <span className="text-xs font-bold text-primary-foreground">3</span>
                   </div>
-                  <span className="font-inter text-muted-foreground">Project kickoff & timeline</span>
+                  <span className="font-outfit text-muted-foreground">Project kickoff & timeline</span>
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@ function BrandEnquiry() {
         <div className="container mx-auto px-3 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1
-              className="font-poppins font-bold text-2xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-foreground"
+              className="font-outfit font-bold text-2xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 text-foreground"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -199,7 +199,7 @@ function BrandEnquiry() {
               Start Your Blueprint
             </motion.h1>
             <motion.p
-              className="font-inter text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6"
+              className="font-outfit text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -239,7 +239,7 @@ function BrandEnquiry() {
               </div>
             </motion.div>
             <motion.p
-              className="font-inter text-xs sm:text-sm text-muted-foreground"
+              className="font-outfit text-xs sm:text-sm text-muted-foreground"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -273,10 +273,10 @@ function BrandEnquiry() {
                 <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Building className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
+                    <h2 className="font-outfit font-bold text-2xl text-foreground mb-2">
                       Company Information
                     </h2>
-                    <p className="font-inter text-muted-foreground">
+                    <p className="font-outfit text-muted-foreground">
                       Tell us about your business and what you do.
                     </p>
                   </div>
@@ -313,7 +313,7 @@ function BrandEnquiry() {
                       name="industry"
                       value={formData.industry}
                       onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                       required
                     >
                       <option value="">Select your industry</option>
@@ -363,7 +363,7 @@ function BrandEnquiry() {
                       name="companySize"
                       value={formData.companySize}
                       onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                     >
                       <option value="">Select company size</option>
                       {companySizes.map((size) => (
@@ -378,10 +378,10 @@ function BrandEnquiry() {
                 <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
+                    <h2 className="font-outfit font-bold text-2xl text-foreground mb-2">
                       Contact Information
                     </h2>
-                    <p className="font-inter text-muted-foreground">
+                    <p className="font-outfit text-muted-foreground">
                       How can we reach you to discuss your project?
                     </p>
                   </div>
@@ -441,10 +441,10 @@ function BrandEnquiry() {
                 <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Target className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
+                    <h2 className="font-outfit font-bold text-2xl text-foreground mb-2">
                       Services & Investment
                     </h2>
-                    <p className="font-inter text-muted-foreground">
+                    <p className="font-outfit text-muted-foreground">
                       What services are you interested in and what's your budget?
                     </p>
                   </div>
@@ -462,7 +462,7 @@ function BrandEnquiry() {
                               : "border-border hover:border-border-bright text-foreground"
                           }`}
                         >
-                          <span className="font-inter text-sm">{service}</span>
+                          <span className="font-outfit text-sm">{service}</span>
                         </button>
                       ))}
                     </div>
@@ -474,7 +474,7 @@ function BrandEnquiry() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range) => (
@@ -489,7 +489,7 @@ function BrandEnquiry() {
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                     >
                       <option value="">Select timeline</option>
                       {timelines.map((timeline) => (
@@ -504,10 +504,10 @@ function BrandEnquiry() {
                 <div className="space-y-6">
                   <div className="text-center mb-8">
                     <Target className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
+                    <h2 className="font-outfit font-bold text-2xl text-foreground mb-2">
                       Challenges & Goals
                     </h2>
-                    <p className="font-inter text-muted-foreground">
+                    <p className="font-outfit text-muted-foreground">
                       Help us understand your current situation and objectives.
                     </p>
                   </div>
@@ -556,10 +556,10 @@ function BrandEnquiry() {
                 <div className="space-y-6">
                   <div className="text-center mb-8">
                     <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h2 className="font-poppins font-bold text-2xl text-foreground mb-2">
+                    <h2 className="font-outfit font-bold text-2xl text-foreground mb-2">
                       Final Details
                     </h2>
-                    <p className="font-inter text-muted-foreground">
+                    <p className="font-outfit text-muted-foreground">
                       Any additional information that would help us understand your needs better.
                     </p>
                   </div>
@@ -582,7 +582,7 @@ function BrandEnquiry() {
                       name="hearAboutUs"
                       value={formData.hearAboutUs}
                       onChange={handleInputChange}
-                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-inter text-foreground"
+                      className="mt-1 w-full px-3 py-2 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring font-outfit text-foreground"
                     >
                       <option value="">Select an option</option>
                       <option value="google">Google Search</option>
@@ -599,10 +599,10 @@ function BrandEnquiry() {
                     <Label>Upload Files (Optional)</Label>
                     <div className="mt-1 border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-border-bright transition-colors">
                       <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                      <p className="font-inter text-sm text-muted-foreground mb-1">
+                      <p className="font-outfit text-sm text-muted-foreground mb-1">
                         Upload any relevant documents, briefs, or materials
                       </p>
-                      <p className="font-inter text-xs text-muted-foreground">
+                      <p className="font-outfit text-xs text-muted-foreground">
                         PDF, DOC, PPT files up to 10MB
                       </p>
                     </div>

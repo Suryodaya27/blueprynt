@@ -140,7 +140,7 @@ const Work = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -149,7 +149,7 @@ const Work = () => {
             Our Blueprint Gallery
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -204,8 +204,8 @@ const Work = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${study.color} opacity-80`} />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
-                      <h3 className="font-poppins font-bold text-2xl mb-2">{study.client}</h3>
-                      <p className="font-inter opacity-90">{study.industry}</p>
+                      <h3 className="font-outfit font-bold text-2xl mb-2">{study.client}</h3>
+                      <p className="font-outfit opacity-90">{study.industry}</p>
                     </div>
                   </div>
                   <div className="absolute top-4 right-4">
@@ -217,20 +217,20 @@ const Work = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-poppins font-semibold text-xl mb-3 text-foreground group-hover:text-cyan transition-colors">
+                  <h3 className="font-outfit font-semibold text-xl mb-3 text-foreground group-hover:text-cyan transition-colors">
                     {study.title}
                   </h3>
-                  <p className="font-inter text-muted-foreground mb-4 leading-relaxed">
+                  <p className="font-outfit text-muted-foreground mb-4 leading-relaxed">
                     {study.description}
                   </p>
                   {/* Metrics */}
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {study.metrics.slice(0, 4).map((metric, idx) => (
                       <div key={idx} className="text-center p-2 bg-muted rounded-lg">
-                        <div className="font-poppins font-bold text-lg text-primary">
+                        <div className="font-outfit font-bold text-lg text-primary">
                           {metric.value}
                         </div>
-                        <div className="font-inter text-xs text-muted-foreground">
+                        <div className="font-outfit text-xs text-muted-foreground">
                           {metric.label}
                         </div>
                       </div>
@@ -266,7 +266,7 @@ const Work = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h2
-            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            className="font-outfit font-bold text-4xl md:text-5xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -275,7 +275,7 @@ const Work = () => {
             Ready to Build Your Success Story?
           </motion.h2>
           <motion.p
-            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

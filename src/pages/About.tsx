@@ -97,7 +97,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="font-poppins font-bold text-5xl md:text-6xl mb-6 text-foreground"
+            className="font-outfit font-bold text-5xl md:text-6xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -106,7 +106,7 @@ const About = () => {
             The Architects Behind BluePrynt
           </motion.h1>
           <motion.p
-            className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -129,7 +129,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <motion.h2
-              className="font-poppins font-bold text-3xl md:text-4xl mb-8 text-center text-foreground"
+              className="font-outfit font-bold text-3xl md:text-4xl mb-8 text-center text-foreground"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -140,7 +140,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.p
-                  className="font-inter text-lg text-muted-foreground leading-relaxed mb-6"
+                  className="font-outfit text-lg text-muted-foreground leading-relaxed mb-6"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -151,7 +151,7 @@ const About = () => {
                   structures built to last.
                 </motion.p>
                 <motion.p
-                  className="font-inter text-lg text-muted-foreground leading-relaxed mb-6"
+                  className="font-outfit text-lg text-muted-foreground leading-relaxed mb-6"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -161,7 +161,7 @@ const About = () => {
                   to create marketing solutions with the rigor of architecture and the creativity of art.
                 </motion.p>
                 <motion.p
-                  className="font-inter text-lg text-muted-foreground leading-relaxed"
+                  className="font-outfit text-lg text-muted-foreground leading-relaxed"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -181,20 +181,20 @@ const About = () => {
                 <div className="bg-gradient-primary rounded-xl p-8 text-primary-foreground">
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <div className="font-poppins font-bold text-3xl">500+</div>
-                      <div className="font-inter text-sm opacity-90">Brands Transformed</div>
+                      <div className="font-outfit font-bold text-3xl">500+</div>
+                      <div className="font-outfit text-sm opacity-90">Brands Transformed</div>
                     </div>
                     <div>
-                      <div className="font-poppins font-bold text-3xl">₹2B+</div>
-                      <div className="font-inter text-sm opacity-90">Revenue Generated</div>
+                      <div className="font-outfit font-bold text-3xl">₹2B+</div>
+                      <div className="font-outfit text-sm opacity-90">Revenue Generated</div>
                     </div>
                     <div>
-                      <div className="font-poppins font-bold text-3xl">15+</div>
-                      <div className="font-inter text-sm opacity-90">Countries Served</div>
+                      <div className="font-outfit font-bold text-3xl">15+</div>
+                      <div className="font-outfit text-sm opacity-90">Countries Served</div>
                     </div>
                     <div>
-                      <div className="font-poppins font-bold text-3xl">98%</div>
-                      <div className="font-inter text-sm opacity-90">Client Retention</div>
+                      <div className="font-outfit font-bold text-3xl">98%</div>
+                      <div className="font-outfit text-sm opacity-90">Client Retention</div>
                     </div>
                   </div>
                 </div>
@@ -214,7 +214,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6">
           <motion.h2
-            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            className="font-outfit font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -240,13 +240,13 @@ const About = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-poppins font-semibold text-xl mb-2 text-foreground">
+                <h3 className="font-outfit font-semibold text-xl mb-2 text-foreground">
                   {member.name}
                 </h3>
-                <p className="font-inter text-primary font-medium mb-3">
+                <p className="font-outfit text-primary font-medium mb-3">
                   {member.role}
                 </p>
-                <p className="font-inter text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="font-outfit text-muted-foreground text-sm leading-relaxed mb-4">
                   {member.bio}
                 </p>
                 {/* Achievements */}
@@ -288,7 +288,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6">
           <motion.h2
-            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            className="font-outfit font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -319,11 +319,11 @@ const About = () => {
                       <Badge variant="secondary" className="mr-3">
                         {milestone.year}
                       </Badge>
-                      <h3 className="font-poppins font-semibold text-xl text-foreground">
+                      <h3 className="font-outfit font-semibold text-xl text-foreground">
                         {milestone.title}
                       </h3>
                     </div>
-                    <p className="font-inter text-muted-foreground leading-relaxed">
+                    <p className="font-outfit text-muted-foreground leading-relaxed">
                       {milestone.description}
                     </p>
                   </div>
@@ -344,7 +344,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6">
           <motion.h2
-            className="font-poppins font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
+            className="font-outfit font-bold text-3xl md:text-4xl mb-12 text-center text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -365,10 +365,10 @@ const About = () => {
                 <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-glow">
                   <value.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="font-poppins font-semibold text-xl mb-3 text-foreground">
+                <h3 className="font-outfit font-semibold text-xl mb-3 text-foreground">
                   {value.title}
                 </h3>
-                <p className="font-inter text-muted-foreground leading-relaxed">
+                <p className="font-outfit text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -387,7 +387,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h2
-            className="font-poppins font-bold text-4xl md:text-5xl mb-6 text-foreground"
+            className="font-outfit font-bold text-4xl md:text-5xl mb-6 text-foreground"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -396,7 +396,7 @@ const About = () => {
             Want to Join Our Story?
           </motion.h2>
           <motion.p
-            className="font-inter text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="font-outfit text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

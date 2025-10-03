@@ -50,7 +50,7 @@ const CubeText = ({ text, className = "" }: CubeTextProps) => {
             <div className="absolute inset-0 bg-gradient-primary rounded-sm opacity-20 transform rotate-3 scale-110" />
             
             {/* Character */}
-            <span className="relative z-10 inline-block font-poppins font-bold text-5xl md:text-7xl lg:text-8xl bg-gradient-primary bg-clip-text text-transparent px-1">
+            <span className="relative z-10 inline-block font-outfit font-bold text-5xl md:text-7xl lg:text-8xl bg-gradient-primary bg-clip-text text-transparent px-1">
               {cube.char}
             </span>
             
