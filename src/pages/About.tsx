@@ -144,7 +144,7 @@ const About = () => {
           </div>
         </motion.section>
         {/* Team Section */}
-        <motion.section className="py-16 bg-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }}>
+        {/* <motion.section className="py-16 bg-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }}>
           <div className="container mx-auto px-6">
             <motion.h2 className="font-outfit font-bold text-3xl md:text-4xl mb-12 text-center text-foreground" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
               Meet the Architects
@@ -152,20 +152,20 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {team.map((member, index) => (
                 <motion.div key={member.name} className="bg-background border border-border rounded-xl p-6 text-center hover:shadow-card hover:-translate-y-2 transition-all duration-500" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
-                  {/* Avatar */}
+                  //Avatar
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-glow">
                     <img src={member.image} alt={`${member.name} - ${member.role} at BluePrynt`} className="w-full h-full object-cover" />
                   </div>
                   <h3 className="font-outfit font-semibold text-xl mb-2 text-foreground">{member.name}</h3>
                   <p className="font-outfit text-primary font-medium mb-3">{member.role}</p>
                   <p className="font-outfit text-muted-foreground text-sm leading-relaxed mb-4">{member.bio}</p>
-                  {/* Achievements */}
+                  // Achievements 
                   <div className="flex flex-wrap justify-center gap-2 mb-4">
                     {member.achievements.map((achievement) => (
                       <Badge key={achievement} variant="secondary" className="text-xs">{achievement}</Badge>
                     ))}
                   </div>
-                  {/* Social Links */}
+                  // Social Links
                   <div className="flex justify-center space-x-3">
                     <a href={member.linkedin} className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                       <Linkedin className="w-4 h-4" />
@@ -178,7 +178,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
         {/* Timeline Section */}
         <motion.section className="py-16" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }}>
           <div className="container mx-auto px-6">
